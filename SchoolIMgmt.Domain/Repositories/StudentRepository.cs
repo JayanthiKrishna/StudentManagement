@@ -9,10 +9,10 @@ namespace SchoolIMgmt.Repositories
         public StudentRepository(AppDbContext context) => _context = context;
 
         public async Task<IEnumerable<Student>> GetAllAsync() =>
-            await _context.Students.Include(s => s.Qualifications).ToListAsync();
+            await _context.Students.ToListAsync();
 
         public async Task<Student?> GetByIdAsync(int id) =>
-            await _context.Students.Include(s => s.Qualifications)
+            await _context.Students
                                    .FirstOrDefaultAsync(s => s.Id == id);
 
         public async Task AddAsync(Student student)
@@ -36,6 +36,13 @@ namespace SchoolIMgmt.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+
+
+
+
+
+      
 
 
     }

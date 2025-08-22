@@ -1,5 +1,7 @@
-﻿@{
+﻿@model SchoolIMgmt.Models.loginmodel
+@{
     ViewData["Title"] = "Login";
+    Layout = "Lgnlayout";
 }
 
 <h1>Login</h1>
@@ -9,7 +11,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Email </label>
-                    <input type="text" id="email" class="form-control" />
+                    <input type="text" id="email" class="form-control" asp-for="UserName" />
                 </div>
             </div>
         </div>
@@ -18,7 +20,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Password </label>
-                    <input type="password" id="password" class="form-control" />
+                    <input type="password" id="password" class="form-control" asp-for="Password" />
                 </div>
             </div>
         </div>
@@ -38,14 +40,23 @@
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
 
+       
+
         if (email === "" || password === "") {
             alert("Please Fill All Details");
             return false;
         } else {
+             if(email=="Admin"&&password=="Abc@1234"){
+
+        
             alert("Logged Successful");
             // Redirect to the Create page
-            var createUrl = '@Url.Action("Create", "Students")';
+            var createUrl = '@Url.Action("Index", "Students")';
             window.location.href = createUrl;
+             }
+             else{
+                 alert("invalid login");
+             }
         }
     });
 </script>

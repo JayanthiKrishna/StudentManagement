@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j0ptmjxYzsY=",
+  "dgSpecHash": "EJ55+k7ctCI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\arunv\\source\\repos\\SchoolIMgmt.Domain\\SchoolIMgmt.Domain\\SchoolIMgmt.csproj",
+  "projectFilePath": "C:\\Users\\arunv\\Downloads\\machine test\\machine test\\SchoolIMgmt.Domain\\SchoolIMgmt.Domain\\SchoolIMgmt.Domain\\SchoolIMgmt.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\arunv\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\arunv\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

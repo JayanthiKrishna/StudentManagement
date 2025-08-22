@@ -14,7 +14,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 //Dependency Injection
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<IStudentService, StudentService>();
-
+builder.Services.AddScoped<IQualificationRepo, QualificationRepo>();
+builder.Services.AddScoped<IQualificationService, QualificationService>();
 
 var app = builder.Build();
 

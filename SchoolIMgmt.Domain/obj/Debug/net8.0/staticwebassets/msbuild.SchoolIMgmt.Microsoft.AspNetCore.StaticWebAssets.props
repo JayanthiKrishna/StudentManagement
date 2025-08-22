@@ -1080,23 +1080,23 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\LICENSE.txt'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\SchoolIMgmt.edmwboyt1q.bundle.scp.css'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\SchoolIMgmt.vb7qp2n2p7.bundle.scp.css'))">
       <SourceType>Package</SourceType>
       <SourceId>SchoolIMgmt</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/SchoolIMgmt</BasePath>
-      <RelativePath>SchoolIMgmt.edmwboyt1q.bundle.scp.css</RelativePath>
+      <RelativePath>SchoolIMgmt.vb7qp2n2p7.bundle.scp.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>Reference</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ProjectBundle</AssetTraitValue>
-      <Fingerprint>edmwboyt1q</Fingerprint>
-      <Integrity>QuSmupkFPql0cgZG+Bx7bBgYbkYG9DdIFSvnvtcLLPE=</Integrity>
+      <Fingerprint>vb7qp2n2p7</Fingerprint>
+      <Integrity>m5gEOM+5MeYlJEfFR/o4eh/GXj2Yzs+SLvbZjSp7HXE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\SchoolIMgmt.edmwboyt1q.bundle.scp.css'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\SchoolIMgmt.vb7qp2n2p7.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

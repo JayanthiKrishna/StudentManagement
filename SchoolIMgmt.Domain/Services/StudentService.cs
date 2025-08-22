@@ -8,7 +8,10 @@ namespace SchoolIMgmt.Services
     {
         private readonly IStudentRepository _repo;
 
-        public StudentService(IStudentRepository repo) => _repo = repo;
+        public StudentService(IStudentRepository repo)
+        {
+            _repo = repo;
+        }
 
         public Task<IEnumerable<Student>> GetAllAsync() => _repo.GetAllAsync();
         public Task<Student?> GetByIdAsync(int id) => _repo.GetByIdAsync(id);
@@ -22,6 +25,5 @@ namespace SchoolIMgmt.Services
 
         public Task UpdateAsync(Student student) => _repo.UpdateAsync(student);
         public Task DeleteAsync(int id) => _repo.DeleteAsync(id);
-
     }
 }

@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
 using SchoolIMgmt.Domain.Entities;
 using SchoolIMgmt.Interfaces;
 using SchoolIMgmt.Migrations;
+using SchoolIMgmt.Models;
 
 namespace SchoolIMgmt.Controllers
 {
@@ -10,15 +12,17 @@ namespace SchoolIMgmt.Controllers
 
 
         private readonly IStudentService _service;
-        public StudentsController(IStudentService service) => _service = service;
+        private readonly IQualificationService _Qservice;
+
+        public StudentsController(IStudentService service, IQualificationService Qservice)
+        {
+            _service = service;
+            _Qservice = Qservice;
+        }
+
+       
 
         [HttpGet]
-        public IActionResult Index()
-        {
-
-            return View();
-        }
-        [HttpPost]
         public async Task<IActionResult> Index(Student student)
         {
             var students = await _service.GetAllAsync();
@@ -39,21 +43,13 @@ namespace SchoolIMgmt.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Student student)
         {
-            if (ModelState.IsValid)
-            {
                 await _service.AddAsync(student);
                 return RedirectToAction(nameof(Index));
-            }
-            return View(student);
+            
+          
         }
 
-        [HttpGet]
-        public IActionResult Edit()
-        {
-
-            return View();
-        }
-
+       
         [HttpGet]
         public IActionResult Login()
         {
@@ -61,26 +57,67 @@ namespace SchoolIMgmt.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Edit(int id)
-        //{
-        //    var student = await _service.GetByIdAsync(id);
-        //    if (student == null) return NotFound();
-        //    return View(student);
-        //}
+        [HttpPost]
+        public IActionResult Login(loginmodel model)
+        {
+            string p = "Abc@1234";
+            if(model.UserName == "Admin")
+            {
+                if ((model.Password == p))
+                {
+                    return RedirectToAction("Students", "Create");
+                }
+            }
+            
+
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var student = await _service.GetByIdAsync(id);
+            if (student == null) return NotFound();
+            return View(student);
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Student student)
         {
-            if (ModelState.IsValid)
-            {
+            
                 await _service.UpdateAsync(student);
                 return RedirectToAction(nameof(Index));
-            }
+            
+            
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var student = await _service.GetByIdAsync(id);
+            if (student == null) return NotFound();
             return View(student);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(Student student)
+        {
+
+            await _service.DeleteAsync(student.Id);
+            return RedirectToAction(nameof(Index));
+
+
+        }
+
+
+
+
+
+
        
+
     }
 }
